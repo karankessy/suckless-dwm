@@ -3,3 +3,18 @@ mv config .config
 mv imwheelrc .imwheelrc
 mv mouse.sh .mouse.sh 
 mv xinitrc .xinitrc
+
+
+
+
+
+cd $HOME && git clone https://github.com/GrillingEvil/suckles-dwm.git && cd suckless_dwm;ls
+cp -rv fonts ~/.fonts
+cp -rv .config/* ~/.config/
+cp -rv bin ~/
+cp autostart/autostart.sh ~/.autostart/ && chmod u+x ~/.autostart/autostart.sh
+cp .xinitrc ~/ && chmod u+x ~/.xinitrc
+cp .imwheelrc ~/.imwheelrc
+cp .mouse.sh ~/.mouse.sh
+
+
