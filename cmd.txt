@@ -1,0 +1,5 @@
+mv autostart .autostart 
+mv config .config 
+mv imwheelrc .imwheelrc
+mv mouse.sh .mouse.sh 
+mv xinitrc .xinitrc
