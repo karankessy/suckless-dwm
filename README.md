@@ -22,17 +22,10 @@ suckless-dwm is a dynamic window manager (DWM) designed to be simple, efficient,
 - betterlockscreen: Betterlockscreen is a simple lockscreen utility for X11
 
 ### Arch Installation
-sudo pacman -S dwm dmenu rofi pcmanfm ranger termite kitty st flameshot ncdu picom feh btop alsamixer xfce4-power-manager dunst pavucontrol betterlockscreen
+```sudo pacman -S dwm dmenu rofi pcmanfm ranger termite kitty st flameshot ncdu picom feh btop alsamixer xfce4-power-manager dunst pavucontrol betterlockscreen```
 
-### Debian Installation
-```bash
-sudo apt-get install dwm dmenu rofi pcmanfm ranger termite kitty st flameshot ncdu picom feh btop alsamixer xfce4-power-manager dunst pavucontrol betterlockscreen
-
-## Debian
-sudo apt-get install dwm dmenu rofi pcmanfm ranger termite kitty st flameshot ncdu picom feh btop alsamixer xfce4-power-manager dunst pavucontrol betterlockscreen
-
-## Arch
-sudo pacman -S dwm dmenu rofi pcmanfm ranger termite kitty st flameshot ncdu picom feh btop alsamixer xfce4-power-manager dunst pavucontrol betterlockscreen
+## Debian Installation
+```sudo apt-get install dwm dmenu rofi pcmanfm ranger termite kitty st flameshot ncdu picom feh btop alsamixer xfce4-power-manager dunst pavucontrol betterlockscreen```
 
 ## Dependecies 
     gcc: GNU Compiler Collection
