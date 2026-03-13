@@ -55,14 +55,13 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class            instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",           NULL,       NULL,       0,            1,               -1 },
-	{ "Pavucontrol",    NULL,		NULL,	    0,	          1,	           -1 },
-    { "kitty",		        NULL,		NULL,       0,			  1,		  	   -1 },
-    { "kitty",          NULL,       NULL,       0,            1,               -1 },
-    { "SimpleScreenRecorder",NULL,  NULL,       0,            1,               -1 },
-    { "simplescreenrecorder",NULL,  NULL,       0,            1,               -1 },
-    { "Pcmanfm",          NULL,       NULL,       0,            1,               -1 },
-    { "pcmanfm",          NULL,       NULL,       0,            1,               -1 },
+	{ "Gimp",                NULL,       NULL,       0,            1,           -1 },
+	{ "Pavucontrol",         NULL,       NULL,       0,            1,           -1 },
+	{ "kitty",               NULL,       NULL,       0,            1,           -1 },
+	{ "SimpleScreenRecorder",NULL,       NULL,       0,            1,           -1 },
+	{ "simplescreenrecorder",NULL,       NULL,       0,            1,           -1 },
+	{ "Pcmanfm",             NULL,       NULL,       0,            1,           -1 },
+	{ "pcmanfm",             NULL,       NULL,       0,            1,           -1 },
 
 
 };
@@ -108,13 +107,13 @@ static const char *kitty_htop[] = { "kitty","-e","htop", NULL };
 static const char *kitty_btop[] = { "kitty","-e","btop", NULL };
 static const char *kitty_ranger[] = { "kitty","-e","ranger", NULL };
 static const char *kitty_alsamixer[] = {"kitty","-e","alsamixer", NULL };
-static const char *pavucontrol[] = { "pavucontrol" };
+static const char *pavucontrol[] = { "pavucontrol", NULL };
 static const char *ncdu[] = { "kitty","-e","ncdu","--color","dark", NULL };
 
 
 // powermenun
-static const char *powermenu[] = { "powermenu" };
-static const char *wifi_menu[] = { "bin/rofi-network-manager/rofi-network-manager.sh"}; // its in home directory 
+static const char *powermenu[] = { "powermenu", NULL };
+static const char *wifi_menu[] = { "bin/rofi-network-manager/rofi-network-manager.sh", NULL };
 
 // screen locker
 static const char *betterlockscreen[] = { "betterlockscreen","--lock",NULL };

@@ -1,0 +1,17 @@
+*.o
+*.tar.gz
+
+dwm-6.3/dwm
+dmenu-5.1/dmenu
+dmenu-5.1/stest
+slstatus/slstatus
+st-0.8.5/st
+st-0.8.5/st-autocomplete
+
+config/pulse/*.tdb
+config/pulse/cookie
+config/pulse/*-default-sink
+config/pulse/*-default-source
+
+config/ranger/plugins/__pycache__/
+*.pyc
