@@ -1,39 +1,151 @@
 # suckless-dwm
-suckless-dwm is a dynamic window manager (DWM) designed to be simple, efficient, and customizable. This configuration, named MyDWM, includes a curated list of required packages and dependencies for optimal functionality.
 
-## Required Packages
-- dwm: Dynamic window manager
-- dmenu: Dynamic menu
-- rofi: Window switcher, application launcher, and dmenu replacement
-- pcmanfm: Lightweight file manager
-- ranger: Console file manager with VI key bindings
-- termite: Keyboard-centric terminal emulator
-- kitty: Fast, feature-rich, GPU-accelerated terminal emulator
-- st: Simple terminal emulator
-- flameshot: Powerful yet simple to use screenshot software
-- ncdu: Disk usage analyzer with an ncurses interface
-- picom: X compositor that adds transparency and shadows to windows
-- feh: Lightweight and powerful image viewer and wallpaper setter
-- btop: Htop-inspired task manager for Linux
-- alsamixer: Console-based mixer control for ALSA soundcard driver
-- xfce4-power-manager: Power management tool for the Xfce desktop environment
-- dunst: Lightweight and customizable notification daemon
-- pavucontrol: PulseAudio volume control
-- betterlockscreen: Betterlockscreen is a simple lockscreen utility for X11
+A customized [dwm](https://dwm.suckless.org/) (Dynamic Window Manager) setup featuring the Dracula color scheme, patched with gaps, bar padding, underline tags, per-tag layouts, movestack, cycle layouts, and an auto-start hook. Bundled with matching configs for **st**, **dmenu**, **slstatus**, **kitty**, **rofi**, **picom**, **dunst**, and more.
 
-### Arch Installation
-    sudo pacman -S dwm dmenu rofi pcmanfm ranger termite kitty st flameshot ncdu picom feh btop alsamixer xfce4-power-manager dunst pavucontrol betterlockscreen
+## Features
 
-## Debian Installation
-    sudo apt-get install dwm dmenu rofi pcmanfm ranger termite kitty st flameshot ncdu picom feh btop alsamixer xfce4-power-manager dunst pavucontrol betterlockscreen
+- **Dracula theme** across dwm, st, dmenu, and rofi
+- **Window gaps** with adjustable size (`Super+-`/`Super+=`)
+- **Bar padding** (vertical + horizontal)
+- **Underline indicators** on active tags
+- **Per-tag layouts** (tile, float, monocle, cycle)
+- **Movestack patch** to reorder windows in the stack
+- **Autostart** script with duplicate-process prevention
+- **slstatus** bar showing CPU, RAM, disk usage, and date/time
+- **st terminal** with alpha transparency and Dracula colors
+- **Nerd Font icons** on all 9 workspace tags
 
-## Dependecies 
-    gcc: GNU Compiler Collection
-    make: Build automation tool
-    libx11-6: X11 client-side library
-    libx11: X11 client-side library
-    libx11-dev: X11 client-side library (development files)
-    libxft2: X FreeType interface library
-    libxft-dev: X FreeType interface library (development files)
-    libxinerama-dev: X11 Xinerama extension library (development files)
-    libxinerama1: X11 Xinerama extension library
+## Included Components
+
+| Component   | Version | Description                        |
+|-------------|---------|------------------------------------|
+| dwm         | 6.3     | Dynamic window manager             |
+| st          | 0.8.5   | Simple terminal with alpha patch   |
+| dmenu       | 5.1     | Dynamic menu (centered, grid mode) |
+| slstatus    | -       | Status bar for dwm                 |
+
+## Keybindings
+
+`Super` is the main modifier key (Mod4/Windows key).
+
+### Launchers
+
+| Keybinding             | Action                   |
+|------------------------|--------------------------|
+| `Super + Return`       | Open kitty terminal      |
+| `Super + Shift + Return` | Open st (floating)    |
+| `Super + a`            | Rofi app launcher        |
+| `Super + e`            | Rofi emoji picker        |
+| `Alt + Tab`            | Rofi window switcher     |
+| `Super + p`            | dmenu_run                |
+| `Super + r`            | dmenu_term               |
+| `Print`                | Flameshot screenshot     |
+
+### Window Management
+
+| Keybinding             | Action                   |
+|------------------------|--------------------------|
+| `Super + q`            | Kill focused window      |
+| `Super + Left/Right`   | Focus next/prev window   |
+| `Super + Shift + Left/Right` | Move window in stack |
+| `Ctrl + Left/Right`    | Resize master area       |
+| `Super + Space`        | Toggle layout            |
+| `Super + Shift + Space`| Toggle floating          |
+| `Super + b`            | Toggle status bar        |
+| `Super + t`            | Tiled layout             |
+| `Super + f`            | Floating layout          |
+| `Super + m`            | Monocle layout           |
+| `Super + Ctrl + ,/.`   | Cycle layouts            |
+
+### Gaps
+
+| Keybinding             | Action                   |
+|------------------------|--------------------------|
+| `Super + -`            | Decrease gaps            |
+| `Super + =`            | Increase gaps            |
+| `Super + Shift + =`    | Reset gaps               |
+
+### Utilities
+
+| Keybinding             | Action                   |
+|------------------------|--------------------------|
+| `Super + l`            | Lock screen              |
+| `Super + n`            | WiFi menu                |
+| `Super + v`            | PulseAudio volume control|
+| `Super + Shift + v`    | ALSA mixer               |
+| `Ctrl + Alt + h`       | htop                     |
+| `Ctrl + Alt + b`       | btop                     |
+| `Ctrl + Alt + d`       | ncdu disk analyzer       |
+| `Ctrl + Alt + f`       | fzf finder               |
+| `Super + Shift + s`    | ranger file manager      |
+| `Alt + F4`             | Power menu               |
+
+### Tags / Workspaces
+
+| Keybinding             | Action                   |
+|------------------------|--------------------------|
+| `Super + 1-9`          | Switch to tag            |
+| `Super + Shift + 1-9`  | Move window to tag       |
+| `Super + 0`            | View all tags            |
+| `Super + Shift + q`    | Quit dwm                 |
+
+## Dependencies
+
+### Build Dependencies
+
+```
+gcc make libx11-dev libxft-dev libxinerama-dev
+```
+
+### Arch Linux
+
+```bash
+sudo pacman -S rofi pcmanfm ranger kitty flameshot ncdu picom feh btop \
+    alsa-utils xfce4-power-manager dunst pavucontrol betterlockscreen imwheel
+```
+
+### Debian / Ubuntu
+
+```bash
+sudo apt install rofi pcmanfm ranger kitty flameshot ncdu picom feh btop \
+    alsa-utils xfce4-power-manager dunst pavucontrol betterlockscreen imwheel \
+    gcc make libx11-dev libxft-dev libxinerama-dev
+```
+
+## Installation
+
+```bash
+git clone https://github.com/karankessy/suckless-dwm.git
+cd suckless-dwm
+chmod +x install.sh
+./install.sh
+```
+
+The install script will:
+1. Copy fonts to `~/.fonts`
+2. Copy config files to `~/.config`
+3. Set up the autostart script
+4. Install xinitrc and imwheelrc
+5. Build and install dwm, dmenu, slstatus, and st
+
+## Project Structure
+
+```
+suckless-dwm/
+  dwm-6.3/          # dwm source with patches
+  st-0.8.5/         # st terminal source
+  dmenu-5.1/        # dmenu source
+  slstatus/          # status bar source
+  autostart/         # autostart script (runs on dwm start)
+  bin/               # helper scripts (powermenu, rofi-network-manager, etc.)
+  config/            # app configs (kitty, picom, rofi, ranger, htop, etc.)
+  fonts/             # Nerd Fonts (JetBrains Mono, Iosevka, MesloLGS, etc.)
+  install.sh         # automated installer
+  mydwm              # dwm session launcher with restart loop
+  xinitrc            # X init configuration
+  dwm.desktop        # display manager desktop entry
+```
+
+## License
+
+dwm is developed by [suckless.org](https://suckless.org/) and released under the MIT license. Patches and configurations in this repository follow the same license.
