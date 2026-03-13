@@ -148,4 +148,4 @@ suckless-dwm/
 
 ## License
 
-dwm is developed by [suckless.org](https://suckless.org/) and released under the MIT license. Patches and configurations in this repository follow the same license.
+dwm is developed by [suckless.org](https://suckless.org/) and released under the MIT license. Hobby Project. Use it as you like.
